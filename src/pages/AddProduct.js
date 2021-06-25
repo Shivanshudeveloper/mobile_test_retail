@@ -16,15 +16,17 @@ const AddProduct = () => {
                     Shelve 12
                 </h2>
             
-
-                <BarcodeScannerComponent
-                    width={500}
-                    height={500}
-                    onUpdate={(err, result) => {
-                    if (result) setData(result.text);
-                    else setData("Not Found");
-                    }}
-                />
+                <center>
+                    <BarcodeScannerComponent
+                        width="100%"
+                        height="300"
+                        onUpdate={(err, result) => {
+                        if (result) setData(result.text);
+                        else setData("Not Found");
+                        }}
+                    />
+                </center>
+                
                 <p>{data}</p>
                 <Button
                     className="mt-3"
