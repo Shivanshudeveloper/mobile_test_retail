@@ -8,6 +8,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+var mainData = "";
 
 const AddProduct = () => {
     const [open, setOpen] = React.useState(false);
@@ -21,7 +22,10 @@ const AddProduct = () => {
     const [ data, setData ] = React.useState('Not Found');
 
     React.useEffect(() => {
-        handleClickOpen();
+        if (data !== "Not Found") {
+            handleClickOpen();
+            mainData = data;
+        }
     }, [data]);
 
     return (
@@ -35,7 +39,7 @@ const AddProduct = () => {
                 <DialogTitle id="alert-dialog-title">Bar Code Sample Test</DialogTitle>
                 <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    Your Data is {data}
+                    Your Data is {mainData}
                 </DialogContentText>
                 </DialogContent>
                 <DialogActions>
