@@ -1,6 +1,5 @@
 import React from 'react';
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
-import Button from '@material-ui/core/Button';
 import Footer from '../components/Footer';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
