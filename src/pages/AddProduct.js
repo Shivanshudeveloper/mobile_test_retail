@@ -1,7 +1,6 @@
 import React from 'react';
-import BarcodeScannerComponent from "react-webcam-barcode-scanner";
+import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import Button from '@material-ui/core/Button';
-
 import Footer from '../components/Footer';
 
 
@@ -14,17 +13,19 @@ const AddProduct = () => {
         <>
             <div className="container mt-4">
                 <h2 className="fw-bold">
-                    Add Product
+                    Shelve 12
                 </h2>
-                
+            
+
                 <BarcodeScannerComponent
-                    width="100%"
-                    height="auto"
+                    width={500}
+                    height={500}
                     onUpdate={(err, result) => {
-                    if (result) setData(result.text)
-                    else console.log(err)
+                    if (result) setData(result.text);
+                    else setData("Not Found");
                     }}
                 />
+                <p>{data}</p>
                 <Button
                     className="mt-3"
                     style={{ height: '50px' }}
@@ -48,7 +49,7 @@ const AddProduct = () => {
                     color="secondary"
                     
                 >
-                    Exit
+                    End of Shelve
                 </Button>
                 
                 <Button
@@ -61,7 +62,7 @@ const AddProduct = () => {
                     color="primary"
                     
                 >
-                    Save and Close
+                    Submit and Next
                 </Button>
 
 

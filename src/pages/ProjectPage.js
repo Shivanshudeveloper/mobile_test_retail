@@ -105,7 +105,7 @@ const ProjectPage = () => {
                     color="primary"
                     
                 >
-                    Add Product
+                    Add Shelve
                 </Button>
 
                 <section className="mt-4">
